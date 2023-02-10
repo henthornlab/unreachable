@@ -38,7 +38,8 @@ def compiler():
         <html>
           <head><title>Compiling and testing</title></head>
           <body>
-            <h1>Compiling and testing</h1>'''
+            <h1>Compiling and testing</h1>
+            <h2>Please wait</h2>'''
 
     if death:
         doc += '<img src="static/death.jpg" alt="So you have chosen death" height="580">'
