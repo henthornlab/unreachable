@@ -17,11 +17,15 @@ def compiler():
     logging.info("compile request from IP %s", request.remote_addr)
 
     compflags = request.form.get("compflags")
-    print(compflags)
+    if compflags.find("-DDEATH") != -1:
+        death = True
+    else:
+        death = False
+
 
     delay = "2000"
     destination = "'/alive'"
-    if compflags.find("-DDEATH") != -1:
+    if death:
         destination = "'/dead'"
         delay = "6000"
         if request.form.get("compiler") == "clang15":
@@ -34,8 +38,12 @@ def compiler():
         <html>
           <head><title>Compiling and testing</title></head>
           <body>
-            <h1>Compiling and testing</h1>
-            <script>
+            <h1>Compiling and testing</h1>'''
+
+    if death:
+        doc += '<img src="static/death.jpg" alt="So you have chosen death" height="580">'
+
+    doc += '''<script>
             setTimeout(function(){
             window.location.href='''
 
