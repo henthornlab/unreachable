@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Unreachable Code</title>
+
+    <p>
+    Can you get the flag by compiling the code below? Choose your compiler options
+    </p>
+
+    <form action="/compiler" method="post">
+    <label for="compiler">Compiler:</label>
+    <select name="compiler" id="compiler">
+    <option value="gcc">x86-64 gcc 12.2</option>
+    <option value="icc">x86-64 icc 19.0.0</option>
+    <option value="clang11">x86-64 clang 11.0.1</option>
+    <option value="clang15">x86-64 clang 15.0.0</option>
+    </select>-
+
+    <select name="std" id="std">
+    <option value="std">-std=c++17</option>
+    </select>
+
+    <label for="warns">Warning level:</label>
+    <select name="Warnings" id="warns">
+    <option value="wall">-Wall</option>
+    <option value="wnone">-w</option>
+    <option value="wnone">-Werror</option>
+    </select>
+
+    <label for="opts">Optimization level:</label>
+    <select name="opts" id="opts">
+    <option value="none">Normal -O0</option>
+    <option value="more">More -O1</option>
+    <option value="moremore">Even more -O2</option>
+    </select>
+
+    <label for="compflags">Other compiler options: </label>
+    <input type="text" id="compflags" name="compflags"><br><br>
+
+    <input type="submit" value="Submit">
+    </form>
+    <br>
+    <img src="static/unreachable.jpg" alt="Code that doesn't work" height="580">
+</head>
+<body>
+
+</body>
+</html>
