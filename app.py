@@ -29,7 +29,7 @@ def compiler():
         destination = "'/dead'"
         delay = "6000"
         if request.form.get("compiler") == "clang15":
-            if (request.form.get("opts") == "more" or request.form.get("opts") == "moremore"):
+            if request.form.get("opts") == "more":
                 destination = "'/solved?flag=ctf{optimized_undefined_behavior}'"
                 delay = "2000"
 
@@ -42,7 +42,7 @@ def compiler():
             <h2>Please wait</h2>'''
 
     if death:
-        doc += '<img src="static/death.jpg" alt="So you have chosen death" height="580">'
+        doc += '<img src="static/death.jpg" alt="So you have chosen death" height="500">'
 
     doc += '''<script>
             setTimeout(function(){
